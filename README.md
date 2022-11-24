@@ -1,6 +1,8 @@
-# newsbot
+# @newsbot@mstdn.social
 
-Adapted from the [Platypus blog](https://blog.platypush.tech/article/Create-a-Mastodon-bot-to-forward-Twitter-and-RSS-feeds-to-your-timeline)
+Based on this [Platypus blog post](https://blog.platypush.tech/article/Create-a-Mastodon-bot-to-forward-Twitter-and-RSS-feeds-to-your-timeline).
+
+Create a Mastodon bot to forward Twitter and RSS feeds to your timeline.
 
 Install Redis
 ```Shell
