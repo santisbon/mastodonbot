@@ -1,9 +1,9 @@
 # Mastodon bot
 
 Create a Mastodon bot to forward Twitter and RSS feeds to your timeline.
-Based on this [Platypus blog post](https://blog.platypush.tech/article/Create-a-Mastodon-bot-to-forward-Twitter-and-RSS-feeds-to-your-timeline).
+Inspired by this [Platypus blog post](https://blog.platypush.tech/article/Create-a-Mastodon-bot-to-forward-Twitter-and-RSS-feeds-to-your-timeline).
 
-# Installation
+## Installation with Docker Compose
 
 ```Shell
 # Create containers for services and start them
@@ -30,4 +30,8 @@ Configuration goes in:
 # user
 ~/.config/platypush/config.yaml
 ~/.config/platypush/scripts/
+```
+You can convert the Docker Compose file to k8s with
+```Shell
+kompose --file compose.yaml convert
 ```

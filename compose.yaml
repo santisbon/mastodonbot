@@ -1,11 +1,15 @@
+version: "3.8"
+
 services:
   app:
     image: santisbon/mastodon-bot
+    ports:
+      - "8008:8008"
     networks:
       - mastodon-net
     depends_on:
       - cache
-    platform: linux/arm64
+    # platform: linux/arm64
     container_name: bot-app
     hostname: bot-app
     build:
@@ -13,10 +17,12 @@ services:
       dockerfile: Dockerfile-app
   cache:
     image: redis
+    ports:
+      - "6379:6379"
     networks:
       - mastodon-net
     command: redis-server --save 60 1 --loglevel warning
-    platform: linux/arm64
+    # platform: linux/arm64
     container_name: bot-redis
     hostname: bot-redis
     volumes:

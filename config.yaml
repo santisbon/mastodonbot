@@ -5,8 +5,8 @@ mastodon:
 rss:
   poll_seconds: 300
   subscriptions:
-    - https://nitter.net/Reuters/rss
     - https://nitter.net/WSJ/rss
+    - https://nitter.net/Reuters/rss
 
 backend.redis:
     redis_args:
