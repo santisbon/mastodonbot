@@ -1,0 +1,11 @@
+FROM        debian
+SHELL       ["/bin/bash", "-c"]
+
+RUN         apt update && apt upgrade -y \
+            && apt install -y python3 pip \
+            && pip3 install 'platypush[rss]' \
+            && mkdir -p /etc/platypush/scripts
+COPY        ./config.yaml /etc/platypush/
+COPY        ./scripts/mastodon_queue_bot.py /etc/platypush/scripts/
+CMD         ["platypush"]
+# CMD         tail -f /dev/null

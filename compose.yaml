@@ -1,0 +1,31 @@
+services:
+  app:
+    image: santisbon/mastodon-bot
+    networks:
+      - mastodon-net
+    depends_on:
+      - cache
+    platform: linux/arm64
+    container_name: bot-app
+    hostname: bot-app
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+  cache:
+    image: redis
+    networks:
+      - mastodon-net
+    command: redis-server --save 60 1 --loglevel warning
+    platform: linux/arm64
+    container_name: bot-redis
+    hostname: bot-redis
+    volumes:
+      - type: volume
+        source: redis-data
+        target: /data
+
+volumes:
+  redis-data:
+
+networks:
+  mastodon-net:
