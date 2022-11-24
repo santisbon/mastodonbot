@@ -72,9 +72,9 @@ def feed_entries_publisher():
               source_name += '@twitter.com'
 
             if item_url and content:
-              content = f'Originally posted by {source_name}: {item_url}\n\n{content}'
-              if referenced_urls:
-                content = f'Referenced link: {referenced_urls[-1]}\n{content}'
+              content = f'{content}\n\n{source_name}: {item_url}'
+              #if referenced_urls:
+                #content = f'Referenced link: {referenced_urls[-1]}\n{content}'
 
               # Publish the status to Mastodon
               run(
