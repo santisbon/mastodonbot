@@ -5,11 +5,9 @@ mastodon:
 rss:
   poll_seconds: 300
   subscriptions:
-    - https://blog.platypush.tech/rss
-    - https://nitter.net/hackernoon/rss
-    - https://nitter.net/TheHackersNews/rss
-    - https://nitter.net/QuantaMagazine/rss
-    - https://nitter.net/gradientpub/rss
-    - https://nitter.net/IEEEorg/rss
-    - https://nitter.net/ComputerSociety/rss
-    - https://nitter.net/physorg_com/rss
+    - https://nitter.net/Reuters/rss
+    - https://nitter.net/WSJ/rss
+
+backend.redis:
+    redis_args:
+        host: bot-redis
