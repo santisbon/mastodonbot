@@ -1,0 +1,15 @@
+mastodon:
+  base_url: https://some.mastodon.instance
+  access_token: YOUR-BOT-API-ACCESS-TOKEN
+
+rss:
+  poll_seconds: 300
+  subscriptions:
+    - https://blog.platypush.tech/rss
+    - https://nitter.net/hackernoon/rss
+    - https://nitter.net/TheHackersNews/rss
+    - https://nitter.net/QuantaMagazine/rss
+    - https://nitter.net/gradientpub/rss
+    - https://nitter.net/IEEEorg/rss
+    - https://nitter.net/ComputerSociety/rss
+    - https://nitter.net/physorg_com/rss
