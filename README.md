@@ -13,5 +13,7 @@ Edit ```compose.yaml``` to set the correct ```platform``` for your [hardware](ht
 
 ```Shell
 docker compose -p mastodon-bot-project up --detach
+```
+```Shell
 docker compose -p mastodon-bot-project down
 ```
