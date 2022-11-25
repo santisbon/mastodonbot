@@ -9,7 +9,7 @@ services:
       - mastodon-net
     depends_on:
       - cache
-    # platform: linux/arm64
+    platform: linux/arm64
     container_name: bot-app
     hostname: bot-app
     build:
@@ -22,7 +22,7 @@ services:
     networks:
       - mastodon-net
     command: redis-server --save 60 1 --loglevel warning
-    # platform: linux/arm64
+    platform: linux/arm64
     container_name: bot-redis
     hostname: bot-redis
     volumes:
