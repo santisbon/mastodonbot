@@ -7,7 +7,9 @@ Recommended deployment: on [Docker](https://github.com/santisbon/guides/blob/mai
 ```Shell
 git clone git@github.com:santisbon/mastodonbot.git && cd mastodonbot
 ```
-Edit ```config.yaml``` to set your Mastodon ```base_url``` and ```access_token```.
+
+Edit ```config.yaml``` to set your Mastodon ```base_url``` and ```access_token```.  
+Edit ```compose.yaml``` to set the correct ```platform``` for your [hardware](https://github.com/santisbon/guides/blob/main/setup/docker.md#architecture).  
 
 ```Shell
 docker compose -p mastodon-bot-project up --detach
