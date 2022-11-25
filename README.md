@@ -5,7 +5,7 @@ Inspired by this [Platypush blog post](https://blog.platypush.tech/article/Creat
 Recommended deployment: on [Docker](https://github.com/santisbon/guides/blob/main/setup/docker.md) containers running on a [Raspberry Pi](https://github.com/santisbon/guides/blob/main/setup/raspberry-pi.md).
 
 ```Shell
-git clone git@github.com:santisbon/mastodonbot.git && cd mastodonbot
+git clone https://github.com/santisbon/mastodonbot.git && cd mastodonbot
 ```
 
 Edit ```config.yaml``` to set your Mastodon ```base_url``` and ```access_token```.  
