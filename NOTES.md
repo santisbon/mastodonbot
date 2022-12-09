@@ -12,6 +12,11 @@ Goes here:
 ~/.config/platypush/scripts/
 ```
 
+You can override the config.yaml location via the command line:
+```
+platypush -c "/path/to/config.yaml"
+```
+
 ## Kubernetes
 
 This project is not a good fit for k8s. It's meant to run on a single, small machine like a Raspberry Pi.  
