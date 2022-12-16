@@ -26,6 +26,7 @@ Edit `compose.yaml` to set the correct `platform` for your [hardware](https://gi
 In `config.yaml` make sure the Redis `host` matches the cache service `hostname` from the `compose.yaml` file.
 
 For Kubernetes:  
+In `config.yaml` make sure the Redis `host` is `localhost` as both containers are in the same pod.
 Build the bot image for your target architecture and push it to a **private** registry. Example:
 ```Shell
 docker build -f Dockerfile-app -t localhost:32000/mastodonbot --platform linux/arm64 .
@@ -42,6 +43,8 @@ docker compose -p mastodon-bot-project down
 
 With Kubernetes:
 ```Shell
+# microk8s kubectl if using microk8s
+kubectl create namespace botspace
 kubectl apply -f kubernetes.yaml -n botspace
 kubectl delete -f kubernetes.yaml -n botspace
 ```
