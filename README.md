@@ -5,6 +5,7 @@ Inspired by this [Platypush blog post](https://blog.platypush.tech/article/Creat
 
 Recommended deployment: on containers (Docker Compose or Kubernetes) running on a Raspberry Pi.  
 See [NOTES.md](NOTES.md) for an important disclaimer when using Kubernetes.  
+
 [How to set up a Raspberry Pi](https://github.com/santisbon/guides/blob/main/setup/raspberry-pi.md)  
 [How to set up Docker](https://github.com/santisbon/guides/blob/main/setup/docker.md)  
 [How to set up Kubernetes](https://github.com/santisbon/guides/blob/main/setup/k8s.md)
