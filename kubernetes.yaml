@@ -1,0 +1,67 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: localdisk-sc
+provisioner: kubernetes.io/no-provisioner
+allowVolumeExpansion: true
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cache-pv
+spec:
+  storageClassName: localdisk-sc
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /var/cache
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cache-pvc
+spec:
+  storageClassName: localdisk-sc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: bot-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mastodonbot
+  template:
+    metadata:
+      labels:
+        app: mastodonbot
+    spec:
+      containers:
+      - name: mastodonbot-c
+        image: localhost:32000/mastodonbot
+      - name: redis-c
+        image: redis
+        command: ["redis-server"] 
+        args: ["--save", "60", "1", "--loglevel", "warning"]
+        volumeMounts:
+        - name: cache-vol
+          mountPath: /data
+      volumes:
+      - name: cache-vol
+        persistentVolumeClaim:
+          claimName: cache-pvc

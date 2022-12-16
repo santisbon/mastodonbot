@@ -19,9 +19,9 @@ platypush -c "/path/to/config.yaml"
 
 ## Kubernetes
 
-This project is not a good fit for k8s. It's meant to run on a single, small machine like a Raspberry Pi.  
-In addition, Platypush doesn't support specifying an access token programatically. It's always loaded from the config file.  
-This means the container image that k8s pulls from a repository would expose that secret instead of gettting it from the orchestrator's secrets store.  
+This project is meant to run on a single, small machine like a Raspberry Pi. However, Kubernetes can be used to make sure the app recovers from a crash as long as the bot docker image is pulled from a private registry.  
+
+The reason for a private registry is that Platypush doesn't support specifying an access token programatically. It's always loaded from the config file. This means the container image that k8s pulls from the registry contains that secret instead of gettting it from the orchestrator's secrets store.  
 
 
 
