@@ -19,7 +19,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /var/cache
+    path: /var/botcache
 
 ---
 
