@@ -25,6 +25,7 @@ See [NOTES.md](NOTES.md) for an important disclaimer when using Kubernetes.
    In `config.yaml` make sure the Redis `host` matches the cache service `hostname` from the `compose.yaml` file.
    - For **Kubernetes**:  
    In `config.yaml` make sure the Redis `host` is `localhost` as both containers (app and cache) are in the same pod.  
+   In `kubernetes.yaml` adjust the `path` for the persistent volume and `image`, if desired.  
    Build the app image for your target architecture and push it to a **private** registry. Example:
    ```Shell
    docker build -f Dockerfile-app -t localhost:32000/mastodonbot --platform linux/arm64 .
