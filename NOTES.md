@@ -31,3 +31,11 @@ microk8s kubectl get deploy -n botspace
 microk8s kubectl logs <pod-name> -n botspace -c mastodonbot-c
 microk8s kubectl logs <pod-name> -n botspace -c redis-c
 ```
+
+Cluster-wide resources:
+- StorageClass
+- PersistentVolume
+
+Namespaced resources (`botspace`)
+- PersistentVolumeClaim
+- Deployment
