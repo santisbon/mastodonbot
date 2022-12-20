@@ -1,28 +1,3 @@
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: localdisk-sc
-provisioner: kubernetes.io/no-provisioner
-allowVolumeExpansion: true
-
----
-
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: cache-pv
-spec:
-  storageClassName: localdisk-sc
-  persistentVolumeReclaimPolicy: Retain
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /var/botcache
-
----
-
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
