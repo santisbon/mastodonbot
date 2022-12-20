@@ -40,6 +40,7 @@ See [NOTES.md](NOTES.md) for an important disclaimer when using Kubernetes.
    - With **Kubernetes** (if using microk8s type `microk8s kubectl`)
    ```Shell
    kubectl create namespace botspace
-   kubectl apply -f kubernetes-cluster.yaml
+   kubectl apply -f kubernetes-sc.yaml 
+   kubectl apply -f kubernetes-pv.yaml
    kubectl apply -f kubernetes-namespace.yaml -n botspace # apply or delete
    ```
