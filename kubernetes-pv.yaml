@@ -1,12 +1,3 @@
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: localdisk-sc
-provisioner: kubernetes.io/no-provisioner
-allowVolumeExpansion: true
-
----
-
 kind: PersistentVolume
 apiVersion: v1
 metadata:
